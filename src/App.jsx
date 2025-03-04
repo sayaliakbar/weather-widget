@@ -10,14 +10,41 @@ function App() {
   const apiUrl = import.meta.env.VITE_API_URL;
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const [city, setCity] = useState("quetta");
-  const [weatherData, setWeathterData] = useState("quetta");
+  const [city, setCity] = useState(null);
+  const [currentCity, setCurrentCity] = useState(null);
+  const [weatherData, setWeathterData] = useState(null);
   const [airQualityData, setAirQualityData] = useState(null);
   const [fiveDayForecast, setFiveDayForecast] = useState(null);
 
   useEffect(() => {
+    handleCurrentCity();
     fetchWeatherData();
   }, [city]);
+
+  const handleCurrentCity = () => {
+    if (!currentCity) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            axios
+              .get(
+                `${apiUrl}/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+              )
+              .then((response) => {
+                setCurrentCity(response.data.name);
+                setCity(response.data.name);
+              });
+          },
+          (error) => {
+            console.error("Error retrieving location:", error);
+          }
+        );
+      } else {
+        console.log("Geolocation is not available in this browser.");
+      }
+    }
+  };
 
   const fetchForecastData = (lat, lon) => {
     axios
@@ -57,7 +84,7 @@ function App() {
 
   return (
     <div>
-      <Navbar onSearch={handleSearch} />
+      <Navbar onSearch={handleSearch} currentCity={currentCity} />
       {weatherData && (
         <div style={{ display: "flex", padding: "30px", gap: "20px" }}>
           <div style={{}}>
