@@ -61,7 +61,7 @@ const Mainweather = ({ weatherData }) => {
           fontWeight: "bold",
         }}
       >
-        {temperatureCelcius}c{renderTemperateIcon()}
+        {temperatureCelcius}°C{renderTemperateIcon()}
       </div>
       <div style={{ fontSize: "15px", marginTop: "8px", fontWeight: "50px" }}>
         {weatherDescription}
