@@ -1,6 +1,7 @@
 import React from "react";
 import { FilterDrama, GpsFixed } from "@mui/icons-material";
 import { useState } from "react";
+import axios from "axios";
 
 // import GpsFixedIcon from "@mui/icons-material/GpsFixed";
 import { TextField, Button } from "@mui/material";
@@ -8,10 +9,35 @@ import { TextField, Button } from "@mui/material";
 const Navbar = ({ onSearch }) => {
   const [searchCity, setSearchCity] = useState("");
 
+  const apiURL = import.meta.env.VITE_API_URL;
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   const handleSearchCity = () => {
     if (searchCity.trim()) {
       onSearch(searchCity);
       setSearchCity("");
+    }
+  };
+
+  const handleCurrentCity = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          axios
+            .get(
+              `${apiURL}/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+            )
+            .then((response) => {
+              onSearch(response.data.name);
+            });
+        },
+        (error) => {
+          console.error("Error retrieving location:", error);
+        }
+      );
+    } else {
+      console.log("Geolocation is not available in this browser.");
     }
   };
   return (
@@ -21,7 +47,7 @@ const Navbar = ({ onSearch }) => {
         alignItems: "center",
         justifyContent: "space-between",
         marginTop: "10px",
-        padding: "10px",
+        paddingTop: "10px",
         paddingLeft: "30px",
         padddingRight: "30px",
       }}
@@ -35,7 +61,7 @@ const Navbar = ({ onSearch }) => {
           style={{
             backgroundColor: "white",
             borderRadius: "2rem",
-            width: "22rem",
+            maxWidth: "22rem",
           }}
           variant="outlined"
           placeholder="Search city"
@@ -50,25 +76,18 @@ const Navbar = ({ onSearch }) => {
           Search
         </Button>
       </div>
-      <div
+      <Button
+        onClick={handleCurrentCity}
+        variant="contained "
         style={{
-          marginTop: "1rem",
-          fontSize: "16px",
-          fontWeight: "700",
-          backgroundColor: "#4B5550",
-          height: "35px",
-          width: "150px",
-          color: "white",
-          gap: "2px",
           borderRadius: "6px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          backgroundColor: "#4B5550",
+          color: "white",
         }}
       >
         <GpsFixed />
-        <p style={{ fontSize: "14px" }}>Current Location</p>
-      </div>
+        Current Location
+      </Button>
     </nav>
   );
 };
