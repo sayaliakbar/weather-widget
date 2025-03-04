@@ -2,6 +2,7 @@ import "./App.css";
 import Mainweather from "./components/Mainweather";
 import Navbar from "./components/Navbar";
 import TodayHighlights from "./components/TodayHighlights";
+import Forecast from "./components/Forecast";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -17,6 +18,17 @@ function App() {
   useEffect(() => {
     fetchWeatherData();
   }, [city]);
+
+  const fetchForecastData = (lat, lon) => {
+    axios
+      .get(`${apiUrl}/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+      .then((response) => {
+        setFiveDayForecast(response.data);
+      })
+      .catch((error) =>
+        console.log("Error fetching the forecast data:", error)
+      );
+  };
 
   const fetchAirQualityData = (lat, lon) => {
     axios
@@ -35,6 +47,7 @@ function App() {
       .then((response) => {
         setWeathterData(response.data);
         fetchAirQualityData(response.data.coord.lat, response.data.coord.lon);
+        fetchForecastData(response.data.coord.lat, response.data.coord.lon);
       });
   };
 
@@ -47,14 +60,14 @@ function App() {
       <Navbar onSearch={handleSearch} />
       {weatherData && (
         <div style={{ display: "flex", padding: "30px", gap: "20px" }}>
-          <div style={{ marginRight: "10px" }}>
+          <div style={{}}>
             <Mainweather weatherData={weatherData} />
+            <Forecast forecastData={fiveDayForecast} />
           </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              flex: "1",
               gap: "20px",
             }}
           >
