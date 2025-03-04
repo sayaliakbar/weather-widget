@@ -19,7 +19,7 @@ const Forecast = ({ forecastData }) => {
   };
   return (
     <>
-      <p style={{ fontSize: "1rem" }}>5 Days Forecast</p>
+      <h1 style={{ fontWeight: "bold", fontSize: "20px" }}>5 Days Forecast</h1>
       <div
         style={{
           backgroundColor: "#374151",
