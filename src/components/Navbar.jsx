@@ -1,10 +1,19 @@
 import React from "react";
 import { FilterDrama, GpsFixed } from "@mui/icons-material";
+import { useState } from "react";
 
 // import GpsFixedIcon from "@mui/icons-material/GpsFixed";
 import { TextField, Button } from "@mui/material";
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
+  const [searchCity, setSearchCity] = useState("");
+
+  const handleSearchCity = () => {
+    if (searchCity.trim()) {
+      onSearch(searchCity);
+      setSearchCity("");
+    }
+  };
   return (
     <nav
       style={{
@@ -30,10 +39,13 @@ const Navbar = () => {
           }}
           variant="outlined"
           placeholder="Search city"
+          value={searchCity}
+          onChange={(e) => setSearchCity(e.target.value)}
         />
         <Button
           style={{ borderRadius: "6px", backgroundColor: "#4B5550" }}
           variant="contained"
+          onClick={handleSearchCity}
         >
           Search
         </Button>
