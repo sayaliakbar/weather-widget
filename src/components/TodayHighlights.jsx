@@ -7,14 +7,14 @@ import {
   Visibility,
   Compress,
   InvertColors,
+  Thermostat,
 } from "@mui/icons-material";
 import HighlightBox from "./HighlightBox";
 
 const TodayHighlights = ({ weatherData, airQualityData }) => {
-  const { main, wind, visibilty, sys } = weatherData;
+  const { main, wind, visibility, sys } = weatherData;
   const airQualityIndex = airQualityData?.main?.aqi;
   const { co, no, no2, o3 } = airQualityData?.components || {};
-  console.log(airQualityData);
 
   const renderAirQualityDescription = (aqi) => {
     switch (aqi) {
@@ -34,21 +34,21 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
   };
 
   const highlights = [
-    { title: "Humidity", value: `${main?.humidity}%`, Icon: InvertColors },
+    { title: "Humidity", value: `${main?.humidity}%`, icon: <InvertColors /> },
     {
       title: "Pressure",
       value: `${main?.pressure} hPa`,
-      Icon: Compress,
+      icon: <Compress />,
     },
     {
       title: "Visibility",
-      value: `${Visibility / 1000} km`,
-      Icon: Visibility,
+      value: `${visibility / 1000} km`,
+      icon: <Visibility />,
     },
     {
       title: "Feels Like",
       value: `${main?.feels_like}°C`,
-      Icon: DeviceThermostat,
+      icon: <Thermostat />,
     },
   ];
   return (
@@ -62,7 +62,13 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
       }}
     >
       <div style={{ fontSize: "20px" }}>Today's Highlights</div>
-      <div style={{ display: "flex", gap: "18px" }}>
+      <div
+        style={{
+          display: "flex",
+          gap: "18px",
+          justifyContent: "space-between",
+        }}
+      >
         <div
           style={{
             backgroundColor: "#374151",
@@ -71,6 +77,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
             borderRadius: "0.5rem",
             marginTop: "11px",
             width: "370px",
+            flex: "1",
           }}
         >
           <div>
@@ -89,7 +96,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
                   fontWeight: "700",
                   backgroundColor: "green",
                   height: "20px",
-                  width: "45px",
+                  padding: "4px",
                   borderRadius: "6px",
                   alignItems: "center",
                   display: "flex",
@@ -169,6 +176,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
           display: "flex",
           gap: "4px",
           marginTop: "10px",
+          justifyContent: "space-between",
         }}
       >
         {highlights.map((highlight, index) => (
@@ -176,7 +184,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
             key={index}
             title={highlight.title}
             value={highlight.value}
-            Icon={highlight.Icon}
+            icon={highlight.icon}
           />
         ))}
       </div>
