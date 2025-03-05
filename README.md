@@ -98,7 +98,5 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 [React](https://react.dev)
 [Material UI](https://mui.com/material-ui/?srsltid=AfmBOorbBC1CTglRfISXpJNforbOPSSNYVT0JURH5VbLvdJbRA3oB4eQ)
-[OpenWeatherMap API](https://openweathermap.org/current)  
+[OpenWeatherMap API](https://openweathermap.org/current)
 [Axios](https://axios-http.com/docs/intro)
-
----
