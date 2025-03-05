@@ -3,8 +3,6 @@
 Weather Widget is a **responsive web application** built with **React** and **Material UI**, designed to fetch and display real-time weather data using the **OpenWeatherMap API**.  
 Users can view **current weather conditions, air quality index**, and a **5-day weather forecast** for any searched city.
 
----
-
 ## 🚀 Features
 
 - ✅ **Current Weather** – Displays temperature, weather description, city name, and country.
@@ -13,9 +11,7 @@ Users can view **current weather conditions, air quality index**, and a **5-day 
 - ✅ **Geolocation Support** – Fetches weather data for the user's current location automatically.
 - ✅ **City Search** – Allows users to search for weather information by entering a city name.
 
----
-
-## Screenshot
+## 📸 Screenshot
 
 ![Image](https://github.com/user-attachments/assets/55f5375e-bfda-4acd-9510-6a31352db844)
 
@@ -79,8 +75,6 @@ Start the development server:
 npm run dev
 ```
 
----
-
 ## 📜 Available Scripts
 
 | Command           | Description                              |
@@ -90,15 +84,11 @@ npm run dev
 | `npm run lint`    | Runs ESLint to check for linting errors. |
 | `npm run preview` | Previews the production build.           |
 
----
-
-## Links
+## 🔗 Links
 
 - Live Site: https://weatherwidgetbysayaliakbar.netlify.app
 
----
-
-## Author
+## 🧔🏻 Author
 
 - GitHub: https://github.com/sayaliakbar
 - LinkedIn: https://www.linkedin.com/in/sayaliakbar
@@ -106,8 +96,6 @@ npm run dev
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/sayaliakbar/weather-widget?tab=MIT-1-ov-file) file for details.
-
----
 
 ## 🙌 Acknowledgements
 
