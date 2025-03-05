@@ -64,7 +64,10 @@ const Navbar = ({ onSearch }) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#4B5563" }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#4B5563", borderRadius: "0.25rem" }}
+      >
         <Toolbar>
           <IconButton
             size="large"
