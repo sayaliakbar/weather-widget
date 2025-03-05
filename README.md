@@ -15,6 +15,10 @@ Users can view **current weather conditions, air quality index**, and a **5-day 
 
 ---
 
+## Screenshot
+
+![Image](https://github.com/user-attachments/assets/55f5375e-bfda-4acd-9510-6a31352db844)
+
 ## 📁 Project Structure
 
 ```plaintext
@@ -87,6 +91,17 @@ npm run dev
 | `npm run preview` | Previews the production build.           |
 
 ---
+
+## Links
+
+- Live Site: https://weatherwidgetbysayaliakbar.netlify.app
+
+---
+
+## Author
+
+- GitHub: https://github.com/sayaliakbar
+- LinkedIn: https://www.linkedin.com/in/sayaliakbar
 
 ## 📜 License
 
