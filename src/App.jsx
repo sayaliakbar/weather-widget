@@ -5,6 +5,21 @@ import TodayHighlights from "./components/TodayHighlights";
 import Forecast from "./components/Forecast";
 import { useState, useEffect } from "react";
 
+import { Box, Paper } from "@mui/material";
+import Grid from "@mui/material/Grid2";
+import { styled } from "@mui/material/styles";
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: "#4B5563",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  ...theme.applyStyles("dark", {
+    backgroundColor: "#1A2027",
+  }),
+}));
+
 import axios from "axios";
 
 function App() {
@@ -86,28 +101,36 @@ function App() {
   return (
     <div>
       <Navbar onSearch={handleSearch} />
-
       {weatherData && (
-        <div style={{ display: "flex", padding: "30px", gap: "20px" }}>
-          <div style={{}}>
-            <Mainweather weatherData={weatherData} />
-            <Forecast forecastData={fiveDayForecast} />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-            }}
-          >
-            <TodayHighlights
-              currentCity={currentCity}
-              onSearch={handleSearch}
-              weatherData={weatherData}
-              airQualityData={airQualityData}
-            />
-          </div>
-        </div>
+        <Box sx={{ flexGrow: 1, marginTop: "20px" }}>
+          <Grid container spacing={2}>
+            <Grid size={3}>
+              <Item
+                sx={{
+                  color: "white",
+                  padding: "30px",
+                  textAlign: "start",
+                  marginBottom: "1rem",
+                }}
+              >
+                <Mainweather weatherData={weatherData} />
+              </Item>
+              <Item>
+                <Forecast forecastData={fiveDayForecast} />
+              </Item>
+            </Grid>
+            <Grid size={9}>
+              <Item>
+                <TodayHighlights
+                  currentCity={currentCity}
+                  onSearch={handleSearch}
+                  weatherData={weatherData}
+                  airQualityData={airQualityData}
+                />
+              </Item>
+            </Grid>
+          </Grid>
+        </Box>
       )}
     </div>
   );
