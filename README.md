@@ -90,7 +90,7 @@ npm run dev
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE["https://github.com/sayaliakbar/weather-widget?tab=MIT-1-ov-file"] file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/sayaliakbar/weather-widget?tab=MIT-1-ov-file) file for details.
 
 ---
 
