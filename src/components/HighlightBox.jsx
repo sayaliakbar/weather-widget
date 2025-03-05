@@ -8,9 +8,14 @@ const HighlightBox = ({ title, value, icon }) => {
         color: "white",
         padding: "1rem",
         borderRadius: "0.5rem",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: "2rem",
       }}
     >
-      <p style={{ fontSize: "1.25rem" }}>{title}</p>
+      <div style={{ fontSize: "1.25rem" }}>{title}</div>
       <div
         style={{
           display: "flex",
