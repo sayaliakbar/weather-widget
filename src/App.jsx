@@ -103,8 +103,8 @@ function App() {
       <Navbar onSearch={handleSearch} />
       {weatherData && (
         <Box sx={{ flexGrow: 1, marginTop: "20px" }}>
-          <Grid container spacing={2}>
-            <Grid size={3}>
+          <Grid container rowSpacing={{ xs: 1.75 }} spacing={2}>
+            <Grid size={{ xs: 12, sm: 5, md: 4, lg: 3 }}>
               <Item
                 sx={{
                   color: "white",
@@ -115,11 +115,20 @@ function App() {
               >
                 <Mainweather weatherData={weatherData} />
               </Item>
+              <Item
+                sx={{
+                  marginBottom: "1rem",
+                  display: { xs: "none", sm: "block", md: "none" },
+                }}
+              >
+                <Forecast forecastData={fiveDayForecast} />
+              </Item>
               <Item>
                 <Forecast forecastData={fiveDayForecast} />
               </Item>
             </Grid>
-            <Grid size={9}>
+
+            <Grid size={{ xs: 12, sm: 7, md: 8, lg: 9 }}>
               <Item>
                 <TodayHighlights
                   currentCity={currentCity}
