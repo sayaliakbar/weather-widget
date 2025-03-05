@@ -99,8 +99,6 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## 🙌 Acknowledgements
 
-## 🙌 Acknowledgements
-
 - [React](https://react.dev): A JavaScript library for building user interfaces with component-based architecture
 - [Material UI](https://mui.com/material-ui): A comprehensive library of React UI components implementing Google's Material Design
 - [OpenWeatherMap API](https://openweathermap.org/current): Weather data provider offering current conditions, forecasts, and meteorological information
