@@ -104,7 +104,7 @@ function App() {
       {weatherData && (
         <Box sx={{ flexGrow: 1, marginTop: "20px" }}>
           <Grid container rowSpacing={{ xs: 1.75 }} spacing={2}>
-            <Grid size={{ xs: 12, sm: 5, md: 4, lg: 3 }}>
+            <Grid size={{ xs: 12, sm: 5, md: 3 }}>
               <Item
                 sx={{
                   color: "white",
@@ -128,7 +128,7 @@ function App() {
               </Item>
             </Grid>
 
-            <Grid size={{ xs: 12, sm: 7, md: 8, lg: 9 }}>
+            <Grid size={{ xs: 12, sm: 7, md: 9 }}>
               <Item>
                 <TodayHighlights
                   currentCity={currentCity}
