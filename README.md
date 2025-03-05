@@ -1,3 +1,98 @@
 # Weather Widget
 
-This repository houses my weather widget built with React and Material UI. It fetches live weather data via an API and displays it using a responsive, modern UI. Perfect for seamlessly integrating real-time weather updates into your projects.
+Weather Widget is a **responsive web application** built with **React** and **Material UI**, designed to fetch and display real-time weather data using the **OpenWeatherMap API**.  
+Users can view **current weather conditions, air quality index**, and a **5-day weather forecast** for any searched city.
+
+---
+
+## 🚀 Features
+
+- ✅ **Current Weather** – Displays temperature, weather description, city name, and country.
+- ✅ **Air Quality Index (AQI)** – Shows AQI levels with details on pollutants.
+- ✅ **5-Day Forecast** – Provides a 5-day weather outlook with temperature and conditions.
+- ✅ **Geolocation Support** – Fetches weather data for the user's current location automatically.
+- ✅ **City Search** – Allows users to search for weather information by entering a city name.
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+weather-widget/
+│── .env
+│── .gitignore
+│── eslint.config.js
+│── index.html
+│── LICENSE
+│── package.json
+│── public/
+│   ├── favicon.ico
+│── README.md
+│── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets/
+│   ├── components/
+│   │   ├── Forecast.jsx
+│   │   ├── HighlightBox.jsx
+│   │   ├── MainWeather.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── TodayHighlights.jsx
+│   ├── main.jsx
+│── vite.config.js
+
+```
+
+## 🛠 Installation
+
+1. Clone the repository
+
+```sh
+
+git clone https://github.com/your-username/weather-widget.git
+cd weather-widget
+```
+
+2. Install dependencies
+
+```sh
+npm install
+```
+
+3. Set up environment variables
+   Create a .env file in the root directory and add your OpenWeatherMap API key:
+
+```env
+VITE_API_URL=https://api.openweathermap.org/data/2.5
+VITE_API_KEY=your_api_key_here
+```
+
+## 🚀 Usage
+
+Start the development server:
+
+```sh
+npm run dev
+```
+
+Then open your browser and navigate to:
+http://localhost:3000
+
+---
+
+## 📜 Available Scripts
+
+| Command           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `npm run dev`     | Starts the development server.           |
+| `npm run build`   | Builds the project for production.       |
+| `npm run lint`    | Runs ESLint to check for linting errors. |
+| `npm run preview` | Previews the production build.           |
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
