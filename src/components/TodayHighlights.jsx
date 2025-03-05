@@ -8,13 +8,24 @@ import {
   Compress,
   InvertColors,
   Thermostat,
+  GpsFixed,
 } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import HighlightBox from "./HighlightBox";
 
-const TodayHighlights = ({ weatherData, airQualityData }) => {
+const TodayHighlights = ({
+  weatherData,
+  airQualityData,
+  currentCity,
+  onSearch,
+}) => {
   const { main, wind, visibility, sys } = weatherData;
   const airQualityIndex = airQualityData?.main?.aqi;
   const { co, no, no2, o3 } = airQualityData?.components || {};
+
+  const handleCurrentCity = () => {
+    onSearch(currentCity);
+  };
 
   const renderAirQualityDescription = (aqi) => {
     switch (aqi) {
@@ -61,7 +72,23 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
         padding: "30px",
       }}
     >
-      <div style={{ fontSize: "20px" }}>Today's Highlights</div>
+      <div
+        style={{
+          fontSize: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        Today's Highlights
+        <Button
+          onClick={handleCurrentCity}
+          color="inherit"
+          sx={{ padding: "0", margin: "0", minWidth: "0px" }}
+        >
+          <GpsFixed sx={{ padding: "0", margin: "0" }} />
+        </Button>
+      </div>
       <div
         style={{
           display: "flex",
