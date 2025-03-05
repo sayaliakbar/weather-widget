@@ -24,19 +24,19 @@ const Mainweather = ({ weatherData }) => {
     if (temperatureCelcius > 23) {
       return (
         <WbSunny
-          style={{ marginLeft: "10px", fontSize: "3rem", color: "orange" }}
+          style={{ marginLeft: "10px", fontSize: "5rem", color: "orange" }}
         />
       );
     } else if (temperatureCelcius < 10) {
       return (
         <AcUnit
-          style={{ marginLeft: "10px", fontSize: "3rem", color: "lightblue" }}
+          style={{ marginLeft: "10px", fontSize: "5rem", color: "lightblue" }}
         />
       );
     } else {
       return (
         <Cloud
-          style={{ marginLeft: "10px", fontSize: "3rem", color: "gray" }}
+          style={{ marginLeft: "10px", fontSize: "5rem", color: "gray" }}
         />
       );
     }
@@ -51,13 +51,19 @@ const Mainweather = ({ weatherData }) => {
           alignItems: "center",
           fontSize: "2rem",
           fontWeight: "bold",
+          justifyContent: "space-between",
         }}
       >
         {temperatureCelcius}°C{renderTemperateIcon()}
       </div>
       <div>{weatherDescription}</div>
       <div style={{ marginTop: "1rem" }}>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <CalendarMonth />
           {currentDate}
         </div>
