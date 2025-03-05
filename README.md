@@ -99,7 +99,9 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## 🙌 Acknowledgements
 
-[React](https://react.dev)
-[Material UI](https://mui.com/material-ui/?srsltid=AfmBOorbBC1CTglRfISXpJNforbOPSSNYVT0JURH5VbLvdJbRA3oB4eQ)
-[OpenWeatherMap API](https://openweathermap.org/current)
-[Axios](https://axios-http.com/docs/intro)
+## 🙌 Acknowledgements
+
+- [React](https://react.dev): A JavaScript library for building user interfaces with component-based architecture
+- [Material UI](https://mui.com/material-ui): A comprehensive library of React UI components implementing Google's Material Design
+- [OpenWeatherMap API](https://openweathermap.org/current): Weather data provider offering current conditions, forecasts, and meteorological information
+- [Axios](https://axios-http.com/docs/intro): Promise-based HTTP client for making API requests from the browser and Node.js
