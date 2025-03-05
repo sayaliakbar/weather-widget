@@ -75,9 +75,6 @@ Start the development server:
 npm run dev
 ```
 
-Then open your browser and navigate to:
-http://localhost:3000
-
 ---
 
 ## 📜 Available Scripts
@@ -93,6 +90,14 @@ http://localhost:3000
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE("https://github.com/sayaliakbar/weather-widget?tab=MIT-1-ov-file") file for details.
+
+---
+
+## 🙌 Acknowledgements
+
+React("https://react.dev")
+Material UI("https://mui.com/material-ui/?srsltid=AfmBOorbBC1CTglRfISXpJNforbOPSSNYVT0JURH5VbLvdJbRA3oB4eQ")
+OpenWeatherMap API("https://openweathermap.org/current")
 
 ---
