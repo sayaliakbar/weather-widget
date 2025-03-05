@@ -19,7 +19,16 @@ const Forecast = ({ forecastData }) => {
   };
   return (
     <>
-      <h1 style={{ fontWeight: "bold", fontSize: "20px" }}>5 Days Forecast</h1>
+      <h1
+        style={{
+          fontWeight: "bold",
+          fontSize: "1.25rem",
+          color: "white",
+          margin: "1rem",
+        }}
+      >
+        5 Days Forecast
+      </h1>
       <div
         style={{
           backgroundColor: "#374151",
@@ -38,24 +47,18 @@ const Forecast = ({ forecastData }) => {
             key={index}
             style={{
               display: "flex",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
               alignItems: "center",
             }}
           >
             <div>
-              <div style={{ fontSize: "15px", fontWeight: "bold" }}>
-                {Math.round(item?.main.temp - 273.15)}°C
-              </div>
+              <div>{Math.round(item?.main.temp - 273.15)}°C</div>
             </div>
             <div>
-              <div style={{ fontSize: "15px", fontWeight: "bold" }}>
-                {formatDate(item?.dt_txt)}
-              </div>
+              <div>{formatDate(item?.dt_txt)}</div>
             </div>
             <div>
-              <div style={{ fontSize: "15px" }}>
-                {item?.weather[0].description}
-              </div>
+              <div>{item?.weather[0].description}</div>
             </div>
           </div>
         ))}
