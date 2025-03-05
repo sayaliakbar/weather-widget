@@ -91,15 +91,19 @@ const TodayHighlights = ({
         <Button
           onClick={handleCurrentCity}
           color="inherit"
-          sx={{ padding: "0", margin: "0", minWidth: "0px" }}
+          sx={{
+            padding: "0",
+            margin: "0",
+            minWidth: "0px",
+          }}
         >
           <GpsFixed sx={{ padding: "0", margin: "0" }} />
         </Button>
       </div>
       <Box sx={{ flexGrow: 1, marginTop: "1rem" }}>
-        <Grid container spacing={2}>
-          <Grid size={7}>
-            <Item>
+        <Grid container rowSpacing={{ xs: 2, sm: 4 }} spacing={2}>
+          <Grid size={{ xs: 12, sm: 12, md: 6 }}>
+            <Item sx={{ height: { xs: "auto", sm: "100%" } }}>
               <div
                 style={{
                   display: "flex",
@@ -154,13 +158,14 @@ const TodayHighlights = ({
               </div>
             </Item>
           </Grid>
-          <Grid size={5}>
+          <Grid size={{ xs: 12, sm: 12, md: 6 }}>
             <Item
               sx={{
                 fontSize: "2rem",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                height: { xs: "auto", sm: "100%" },
               }}
             >
               <p>Sunrise | Sunset</p>
@@ -192,10 +197,9 @@ const TodayHighlights = ({
           </Grid>
 
           {highlights.map((highlight, index) => (
-            <Grid size={3}>
-              <Item sx={{ display: "flex", flexDirection: "column" }}>
+            <Grid size={{ xs: 6, sm: 6, md: 3 }} key={index}>
+              <Item>
                 <HighlightBox
-                  key={index}
                   title={highlight.title}
                   value={highlight.value}
                   icon={highlight.icon}
