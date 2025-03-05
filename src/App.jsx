@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import TodayHighlights from "./components/TodayHighlights";
 import Forecast from "./components/Forecast";
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
 function App() {
@@ -84,7 +85,8 @@ function App() {
 
   return (
     <div>
-      <Navbar onSearch={handleSearch} currentCity={currentCity} />
+      <Navbar onSearch={handleSearch} />
+
       {weatherData && (
         <div style={{ display: "flex", padding: "30px", gap: "20px" }}>
           <div style={{}}>
@@ -99,6 +101,8 @@ function App() {
             }}
           >
             <TodayHighlights
+              currentCity={currentCity}
+              onSearch={handleSearch}
               weatherData={weatherData}
               airQualityData={airQualityData}
             />
